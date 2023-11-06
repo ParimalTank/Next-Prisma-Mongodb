@@ -38,3 +38,45 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+steps of Prisma
+
+Prisma with NextAuth :- https://www.codifytools.com/blog/auth-prisma-mongo-nextjs
+:- https://blog.openreplay.com/authentication-and-db-access-with-next-prisma-and-mongodb/
+
+Follow First This step for crating a schema.prisma file
+https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/mongodb-node-mongodb
+
+for Adding a Initial Data use :
+https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/mongodb/querying-the-database-typescript-mongodb
+
+For Example :
+https://github.com/mongodb-developer/prisma-mongodb-nextjs-example
+
+whereas methods for Crud :
+
+crete method : For insert upcoming data into a database
+
+Example :
+
+const result = await prisma.user.create({
+data: {
+...req.body,
+},
+})
+
+findUniq : find data into a database
+
+Example :
+
+const post = await prisma.post.findUnique({
+where: { id: postId },
+include: { author: true },
+})
+
+delete method :
+
+const post = await prisma.post.delete({
+where: { id: postId },
+})
+
